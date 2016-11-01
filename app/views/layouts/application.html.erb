@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rails Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+
+    <!-- Start: Header -->
+    <div class="page-hdr-wrap">
+      <div class="container">
+        
+        <header class="page-hdr">
+          <h1>Simple Blog CRUD using Rails!</h1>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="page-hdr-nav">
+          <%= link_to 'Home', welcome_index_path, :class => "btn" %>
+          <%= link_to 'All Articles', articles_path, :class => "btn" %>
+          <%= link_to 'Create Article', new_article_path, :class => "btn" %>
+        </nav>
+
+      </div>
+    </div>
+    <!-- End: Header //-->
+
+  	<div class="container">
+
+    	<%= yield %>
+
+    </div>
+
+  </body>
+</html>

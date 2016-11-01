@@ -1,0 +1,52 @@
+
+<h3 class="page-int-title">Showing Article: #<%= @article.id %></h3>
+
+<section class="article-details">
+	<h5><strong>Title: </strong><%= @article.title %></h5>
+	<h5><strong>Text: </strong><%= @article.text %></h5>
+</section>
+
+<article class="section-user-input">
+	<header>
+		<h5>Comments</h5>
+	</header>
+	<hr />
+	<section>
+		<% @article.comments.each do |comment| %>
+			<p>
+				<strong>Auther:</strong>
+				<%= comment.commenter %>
+			</p>
+			<p>
+				<strong>Comment:</strong>
+				<%= comment.body %>
+			</p>
+		<% end %>
+	</section>
+</article>
+
+<article class="section-user-input">
+	<header>
+		<h5>Add Your Comment</h5>
+	</header>
+	<hr />
+	<section>
+		<%= form_for([@article, @article.comments.build]) do |f| %>
+			<div class="form-group">
+				<%= f.label :commenter, :for => "txtCommenter" %>
+				<%= f.text_field :commenter, :class => "form-control", :id => "txtCommenter", :name => "txtCommenter" %>
+			</div>
+			<p>
+				<%= f.label :body, :for => "txtBody" %>
+				<%= f.text_area :body, :class => "form-control", :id => "txtBody", :name => "txtBody" %>
+			</p>
+			<p>
+				<%= f.submit :class => "btn btn-default btn-lg" %>
+			</p>
+		<% end %>
+	</section>
+</article>
+
+<div>
+	<%= link_to 'Edit', edit_article_path(@article) %> | <%= link_to 'Back to Articles', articles_path %>
+</div>

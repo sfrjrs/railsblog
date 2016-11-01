@@ -1,0 +1,69 @@
+
+//
+// Imports
+@import "bourbon";
+@import "neat";
+@import "base/base";
+@import "partials/_globals";
+@import "partials/_header";
+@import "partials/_welcome-content";
+
+.page-int-title {
+	margin: 1.5em 0 .5em 0;
+}
+.section-user-input {
+	margin-top: 2.5em;
+}
+.articles-wrap {
+	.articles-row.tbl-head,
+	.articles-row.tbl-body {
+		@include outer-container;
+
+		.articles-row-cell {
+			@include pad(.8em .5em);
+		}
+	}
+	.articles-row.tbl-head {
+
+		background-color: #ddd;
+
+		.articles-row-cell {
+			font-weight: 700;
+		}
+		.articles-row-cell:nth-child(1) {
+			@include span-columns(3);
+		}
+		.articles-row-cell:nth-child(2) {
+			@include span-columns(9);
+			@include omega();
+		}
+	}
+	.articles-row.tbl-body {
+
+		border-bottom: 1px solid rgba(0,0,0,.1);
+
+		&:hover {
+			background-color: rgba(0,0,0,.03);
+		}
+		.articles-row-cell {
+			min-height: 3.5em;
+		}
+		.articles-row-cell:nth-child(1) {
+			@include span-columns(3);
+		}
+		.articles-row-cell:nth-child(2) {
+			@include span-columns(5);
+		}
+		.articles-row-cell:nth-child(3) {
+			@include span-columns(4);
+			@include omega();
+			text-align: right;
+
+			a.btn {
+				width: 32.5%;
+				text-align: center;
+				display: inline-block;
+			}
+		}
+	}
+}

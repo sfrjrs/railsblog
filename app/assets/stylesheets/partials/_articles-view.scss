@@ -1,0 +1,30 @@
+
+//
+// Mobile screens
+#articlesWrap {
+    .articles-header {
+        @include shift(1);
+        @include span-columns(10);
+    }
+}
+
+//
+// Small screens
+@include media($small-screen) {}
+
+//
+// Medium screens
+@include media($medium-screen) {}
+
+//
+// Large screens
+@include media($large-screen) {
+
+    #articlesWrap {
+        .articles-header {
+            @include shift(1);
+            @include span-columns(10);
+        }
+    }
+
+}

@@ -1,0 +1,16 @@
+
+#welcomeWrap {
+    @include pad(1em 0);
+    @include shift(1);
+	@include span-columns(10);
+
+	@include media($large-screen) {
+		@include shift(0);
+		@include span-columns(12);
+	}
+
+    .homepage-title {
+        margin: 1em 0 .8em 0;
+        font-size: 1.8em;
+    }
+}

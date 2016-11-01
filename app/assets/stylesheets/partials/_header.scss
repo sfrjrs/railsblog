@@ -1,0 +1,65 @@
+
+//
+// Mobile screens
+.page-hdr-wrap {
+	@include pad(1.5em 0);
+	background-color: #000;
+	color: #fff;
+}
+.page-hdr {
+	@include shift(1);
+	@include span-columns(10);
+
+	h1 {
+		margin: 0 0 .8em 0;
+		font-size: 1.8em;
+        font-weight: 500;
+        text-align: center;
+        text-transform: uppercase;
+	}
+}
+.page-hdr-nav {
+	@include shift(1);
+	@include span-columns(10);
+	color: #fff;
+    text-align: center;
+
+	@include media($large-screen) {
+		@include shift(0);
+		@include span-columns(12);
+	}
+}
+
+//
+// Small screens
+@include media($small-screen) {
+
+    .page-hdr {
+        h1 {
+            text-align: left;
+        }
+    }
+    .page-hdr-nav {
+        text-align: left;
+    }
+
+}
+
+//
+// Medium screens
+@include media($medium-screen) {}
+
+//
+// Large screens
+@include media($large-screen) {
+
+    .page-hdr {
+        @include shift(0);
+        @include span-columns(12);
+
+        h1 {
+            text-align: left;
+        }
+    }
+
+}
